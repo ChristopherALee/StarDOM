@@ -1,3 +1,8 @@
+@-webkit-keyframes slideUp {
+  0% {transform: translateY(100%)}
+  100% {transform: translateY(0)}
+}
+
 html body {
   margin: 0;
   border: 0;
@@ -9,4 +14,19 @@ html body {
   position: fixed;
   width: 100vw;
   height: 100vh;
+}
+
+.notepad {
+  background-color: white;
+  width: 40%;
+  min-width: 500px;
+  height: 1000px;
+  margin-left: 125px;
+  -webkit-animation: slideUp 1s;
+  overflow-y: scroll;
+}
+
+.todo-input {
+  display: flex;
+  flex-direction: column;
 }
