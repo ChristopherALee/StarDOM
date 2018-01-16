@@ -1,0 +1,12 @@
+html body {
+  margin: 0;
+  border: 0;
+}
+
+.background-image {
+  background-image: url('http://wallpaperget.com/images/notebook-wallpaper-38.jpg');
+  background-size: cover;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+}
