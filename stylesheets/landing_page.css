@@ -8,6 +8,10 @@ html body {
   border: 0;
 }
 
+#header1 {
+  color: white;
+}
+
 .background-image {
   background-image: url('http://wallpaperget.com/images/notebook-wallpaper-38.jpg');
   background-size: cover;
