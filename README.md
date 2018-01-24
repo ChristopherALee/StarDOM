@@ -52,15 +52,27 @@ $l.ajax = function(options) {
 };
 ```
 
-See below for code snippet of available DOM manipulation methods:
+Event Handling:
+``` javascript
+on (e, handler) {
+  this.htmlEls.forEach( (node) => {
+    node.addEventListener(e, handler);
+    node.eventHandler = handler;
+  });
+}
+
+off (e) {
+  this.htmlEls.forEach( (node) => {
+    node.removeEventListener(e, node.eventHandler);
+  });
+}
+```
+
+See below for code snippet of other available DOM manipulation methods:
 ``` javascript
 class DOMNodeCollection {
   constructor(htmlEls) {
     this.htmlEls = htmlEls;
-  }
-
-  each(callback) {
-    this.htmlEls.forEach(callback);
   }
 
   html(string) {
@@ -138,7 +150,6 @@ class DOMNodeCollection {
     return new DOMNodeCollection(result);
   }
 
-
   find(selector) {
     let result = [];
     debugger
@@ -156,27 +167,10 @@ class DOMNodeCollection {
     this.each ( (node) => node.parentNode.removeChild(node));
   }
 
-  on (e, handler) {
-    this.htmlEls.forEach( (node) => {
-      node.addEventListener(e, handler);
-      node.eventHandler = handler;
-    });
-  }
-
-  off (e) {
-    this.htmlEls.forEach( (node) => {
-      node.removeEventListener(e, node.eventHandler);
-    });
-  }
-
   val() {
     return (
       this.htmlEls[0].value
     );
   }
-
 }
-
-module.exports = DOMNodeCollection;
-
 ```
