@@ -2,8 +2,10 @@
 
 StarDOM is a custom built JavaScript library used for handling event actions, AJAX requests, and manipulation of the DOM. StarDOM features a To-Do application demonstrating the library's flexible abilities to manipulate the DOM.
 
-Condition-based DOM Selection:
+Condition-based DOM Selection: Selection is determinant on the instance of the respective selector
 ``` javascript
+const queue = [];
+
 function $l(selector) {
 
   if (selector instanceof Function) {
@@ -19,7 +21,7 @@ function $l(selector) {
 }
 ```
 
-AJAX Requests:
+AJAX Requests: Sets default request parameters to merge with options passed into the function. Creates an XMLHttpRequest and sends the request, returning a promise.
 ``` javascript
 $l.ajax = function(options) {
   let defaults = {
