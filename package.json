@@ -2,11 +2,15 @@
   "name": "StarDOM",
   "private": true,
   "dependencies": {
-    "es6-promise": "^4.2.2"
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "webpack": "^3.10.0"
   },
   "description": "This README would normally document whatever steps are necessary to get the application up and running.",
   "version": "1.0.0",
-  "main": "jquery_lite.js",
+  "main": "stardom.js",
   "directories": {
     "test": "test"
   },

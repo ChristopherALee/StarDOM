@@ -70,7 +70,7 @@ off (e) {
 }
 ```
 
-See below for code snippet of other available DOM manipulation methods:
+See below for a few other available DOM manipulation methods:
 ``` javascript
 class DOMNodeCollection {
   constructor(htmlEls) {
