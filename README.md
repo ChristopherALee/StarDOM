@@ -4,7 +4,13 @@ StarDOM is a custom built JavaScript library used for handling event actions, AJ
 
 It features 'Just Do It', a To-Do application demonstrating the library's flexible abilities to manipulate the DOM. You can view the repo and the live demo [here](https://github.com/ChristopherALee/JustDoIt).
 
-## Condition-based DOM Selection
+## How To Use
+1. Use the `$l` function, giving it an HTML element, HTML element's className, or HTML element's id as an argument. It will create it as an instance of the `DOMNodeCollection` class.
+2. Now you'll be able to use any of the available DOM manipulation methods available under the `DOMNodeCollection` class.
+
+## Features
+
+### Condition-based DOM Selection
 Selection is determinant on the instance of the respective selector.
 ``` javascript
 const queue = [];
@@ -24,7 +30,7 @@ function $l(selector) {
 }
 ```
 
-## AJAX Requests
+### AJAX Requests
 Sets default request parameters to merge with options passed into the function. Creates an XMLHttpRequest and sends the request, returning a promise.
 ``` javascript
 $l.ajax = function(options) {
@@ -58,7 +64,7 @@ $l.ajax = function(options) {
 };
 ```
 
-## Event Handling
+### Event Handling
 `on` and `off` functions to add or remove event listeners on HTML elements.
 ``` javascript
 on (e, handler) {
@@ -75,7 +81,7 @@ off (e) {
 }
 ```
 
-## Other available DOM manipulation methods:
+### Other available DOM manipulation methods:
 ``` javascript
 html()
 each()
