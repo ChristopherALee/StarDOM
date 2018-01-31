@@ -2,7 +2,7 @@
 
 StarDOM is a custom built JavaScript library used for handling event actions, AJAX requests, and manipulation of the DOM. StarDOM features a To-Do application demonstrating the library's flexible abilities to manipulate the DOM.
 
-It features 'Just Do It', a To-Do application demonstrating the library's flexible abilities to manipulate the DOM. You can view the live demo [here](https://github.com/ChristopherALee/JustDoIt).
+It features 'Just Do It', a To-Do application demonstrating the library's flexible abilities to manipulate the DOM. You can view the repo and the live demo [here](https://github.com/ChristopherALee/JustDoIt).
 
 ## Condition-based DOM Selection
 Selection is determinant on the instance of the respective selector.
