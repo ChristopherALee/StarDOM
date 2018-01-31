@@ -4,7 +4,8 @@ StarDOM is a custom built JavaScript library used for handling event actions, AJ
 
 It features 'Just Do It', a To-Do application demonstrating the library's flexible abilities to manipulate the DOM. You can view the live demo [here](https://github.com/ChristopherALee/JustDoIt).
 
-Condition-based DOM Selection: Selection is determinant on the instance of the respective selector
+## Condition-based DOM Selection
+Selection is determinant on the instance of the respective selector.
 ``` javascript
 const queue = [];
 
@@ -23,7 +24,8 @@ function $l(selector) {
 }
 ```
 
-AJAX Requests: Sets default request parameters to merge with options passed into the function. Creates an XMLHttpRequest and sends the request, returning a promise.
+## AJAX Requests
+Sets default request parameters to merge with options passed into the function. Creates an XMLHttpRequest and sends the request, returning a promise.
 ``` javascript
 $l.ajax = function(options) {
   let defaults = {
@@ -56,7 +58,8 @@ $l.ajax = function(options) {
 };
 ```
 
-Event Handling:
+## Event Handling
+`on` and `off` functions to add or remove event listeners on HTML elements.
 ``` javascript
 on (e, handler) {
   this.htmlEls.forEach( (node) => {
@@ -72,109 +75,18 @@ off (e) {
 }
 ```
 
-See below for a few other available DOM manipulation methods:
+## Other available DOM manipulation methods:
 ``` javascript
-class DOMNodeCollection {
-  constructor(htmlEls) {
-    this.htmlEls = htmlEls;
-  }
-
-  html(string) {
-    if (!string) {
-      return this.htmlEls[0].innerHTML;
-    } else {
-      this.htmlEls.forEach((node) => {
-        node.innerHTML = string;
-      });
-    }
-  }
-
-  empty() {
-    this.htmlEls.forEach((node) => {
-      node.innerHTML = "";
-    });
-  }
-
-  append(arg) {
-    if (arg instanceof DOMNodeCollection) {
-      this.htmlEls.forEach ( (node) => {
-        arg.each ( (argNode) => {
-          node.appendChild(argNode.cloneNode(true));
-          argNode.remove();
-        });
-      });
-    } else {
-      this.htmlEls.forEach( (node) => {
-        node.innerHTML += arg;
-      });
-    }
-  }
-
-  attr(attrName, newValue) {
-    if (typeof newValue === "string") {
-      this.each(node => node.setAttribute(attrName, newValue));
-    } else {
-      return this.nodes[0].getAttribute(attrName);
-    }
-  }
-
-  addClass(className) {
-    this.htmlEls.forEach ( (node) => {
-      node.classList.add(className);
-    });
-  }
-
-  removeClass(className) {
-    this.htmlEls.forEach ( (node) => {
-      node.classList.remove(className);
-    });
-  }
-
-  children() {
-    let result = [];
-
-    this.htmlEls.forEach( (node) => {
-      let nodeChildren = node.children;
-      result = result.concat(Array.from(nodeChildren));
-    });
-
-    return new DOMNodeCollection(result);
-  }
-
-  parent() {
-    let result = [];
-
-    this.htmlEls.forEach( (node) => {
-      let nodeParent = node.parentNode;
-      if (!result.includes(nodeParent)) {
-        result.push(nodeParent);
-      }
-    });
-
-    return new DOMNodeCollection(result);
-  }
-
-  find(selector) {
-    let result = [];
-    debugger
-    this.htmlEls.forEach( (node) => {
-      debugger
-      let elementList = node.querySelectorAll(selector);
-      let elArray = Array.from(elementList);
-      result = result.concat(elArray);
-    });
-    debugger
-    return new DOMNodeCollection(result);
-  }
-
-  remove() {
-    this.each ( (node) => node.parentNode.removeChild(node));
-  }
-
-  val() {
-    return (
-      this.htmlEls[0].value
-    );
-  }
-}
+html()
+each()
+empty()
+append()
+attr()
+addClass()
+removeClass()
+children()
+parent()
+find()
+remove()
+val()
 ```
