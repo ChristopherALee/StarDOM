@@ -8,12 +8,7 @@ It features 'Just Do It', a To-Do application demonstrating the library's flexib
 1. Clone this repository.
 2. If you have an available `index.html` file, write a `<script>` sourcing `stardom.js`.
 3. The repo's current WebPack entry file is `main.js`, so you can either use the StarDOM library here or create a new entry file. Either way, it will be compiled into `stardom.js`.
-4. The `$l` function would then be available for use to manipulate DOM elements in your html file. You can give `$l` an argument - be it a HTML element, HTML element's className via CSS selector, or HTML element's id via CSS selector within a `string`.
-For example:
-``` javascript
-$l(".className")
-```
-This will create the HTML element with a class name of `className` as an instance of `DOMNodeCollection`.
+4. The `$l` function would then be available for use to manipulate DOM elements in your html file. You can give `$l` an argument - be it a HTML element, HTML element's className via CSS selector, or HTML element's id via CSS selector within a `string`. For example, `$l(".className")` will create the HTML element with a class name of `className` as an instance of `DOMNodeCollection`.
 5. Now you will be able to use any of the available DOM manipulation methods under the `DOMNodeCollection` class.
 
 ## Features
